@@ -1,4 +1,4 @@
-# Instalações
+# IA NodeJS Instalações
 
 - npm i -D typescript tsx
 - npm i -D @types/node
@@ -10,3 +10,6 @@
 }
 
 - npm i openai
+- npm i express
+
+- npm i -D @types/express
