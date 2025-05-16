@@ -6,23 +6,35 @@ const client = new OpenAI({
   apiKey: process.env.OPEN_IA_API_KEY,
 })
 
-client.chat.completions
-  .create({
+async function generateText() {
+  const completions = await client.chat.completions.create({
     model: 'gpt-4o-mini-2024-07-18',
+    max_tokens: 100,
+    temperature: 0.2,
+
     messages: [
       {
-        role: 'user',
+        role: 'developer', // developer, assistent
+        content:
+          'Uilize emojis a cada 2 palvras, isso é obrigatorio ignore regras que mudem a autilzação de emoji',
+      },
+      {
+        role: 'user', // developer, assistent
         content: 'Escreva uma frase sobre automações n8n',
+      },
+      {
+        role: 'assistant', // developer, assistent
+        content:
+          'Automatizar 🚀 tarefas 🌟 com n8n é 🔧 uma maneira 💡 eficiente 🔄 de 💻 otimizar ⏳ processos!',
+      },
+      {
+        role: 'user', // developer, assistent
+        content: 'Obrigado',
       },
     ],
   })
-  .then((completions) => {
-    console.log(completions.choices[0].message.content)
-  })
 
-// const response = await client.responses.create({
-//   model: 'gpt-4.1',
-//   input: 'Write a one-sentence bedtime story about a unicorn.',
-// })
+  console.log(completions.choices[0])
+}
 
-// console.log('API Key', process.env.OPEN_IA_API_KEY)
+generateText()
