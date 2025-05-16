@@ -2,9 +2,9 @@
   "name": "ia-node",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+"scripts": {
+  "dev": "tsx watch src/server.ts"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/frantecbh/ia-node.git"
@@ -16,5 +16,15 @@
     "url": "https://github.com/frantecbh/ia-node/issues"
   },
   "homepage": "https://github.com/frantecbh/ia-node#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@rocketseat/eslint-config": "^2.2.2",
+    "@types/node": "^22.15.18",
+    "eslint": "^8.57.1",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0"
+  }
 }
